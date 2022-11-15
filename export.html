@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue train admin</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/custom-style.css">
+  <link rel="stylesheet" href="dist/css/newstyle.css">
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Add DataPages to Export Package</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row no-gutters">
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <table class="dataexport-table" cellpadding="0" cellspacing="0" border="0">
+                  <tbody>
+                    <tr>
+                      <th>DataPages</th>
+                      <th>Include Dependencies</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex">
+                          <input type="checkbox">
+                          <span>All DataPages</span>
+                        </div>
+                      </td>
+                      <td>
+                        <a href="">Bulk Actions</a>
+                      </td>
+                    </tr>
+                    <tr class="modal-row">
+                      <td>
+                        <div class="d-flex pl-4">
+                          <input type="checkbox">
+                          <span> <img id="tab-plus" onclick="showminus()" class="plus-img"
+                            src="dist/img/toolbar_add.png" alt="" data-toggle="collapse" href="#collapseExample1"
+                            role="button" aria-expanded="false" aria-controls="collapseExample"> <img
+                            onclick="showplus()" id="tab-minus" src="dist/img/close_props.gif" alt=""
+                            data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
+                            aria-controls="collapseExample"> <img src="dist/img/app.png" alt=""> Academic Tutoring</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="collapse modal-row" id="collapseExample1">
+                      <td>
+                        <div class="inside-box">
+                          <div>
+                            <input type="checkbox">
+                            <label class="inside-label">Academic Request Form</label>
+                          </div>
+                          <select class="inside-select">
+                            <option value="Structure">DataPage Only</option>
+                            <option value="Data">Data</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="modal-row">
+                      <td>
+                        <div class="d-flex pl-4">
+                          <input type="checkbox">
+                          <span>Class Registration</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="modal-row">
+                      <td>
+                        <div class="d-flex pl-4">
+                          <input type="checkbox">
+                          <span>Meet and Greet</span>
+                        </div>
+                      </td>
+
+                    </tr>
+                    <tr class="modal-row">
+                      <td>
+                        <div class="d-flex pl-4">
+                          <input type="checkbox">
+                          <span>Online Contract</span>
+                        </div>
+                      </td>
+
+                    </tr>
+                    <tr class="modal-row">
+                      <td>
+                        <div class="d-flex pl-4">
+                          <input type="checkbox">
+                          <span>Class Interest</span>
+                        </div>
+                      </td>
+
+                    </tr>
+                    <tr class="modal-row">
+                      <td>
+                        <div class="d-flex pl-4">
+                          <input type="checkbox">
+                          <span>CLB Profile Form</span>
+                        </div>
+                      </td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+          <td>
+            <select class="inside-select">
+              <option value="Structure">DataPages Only</option>
+              <option value="Data">Data</option>
+            </select>
+          </td>
+
+          <div class="modal-body">
+            <nav class="modal-tab">
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link tab-link-1 active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                  role="tab" aria-controls="nav-home" aria-selected="true">DataPages</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                  aria-controls="nav-profile" aria-selected="false">Include Dependencies</a>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="all-options">
+                      <form action="">
+                        <input type="checkbox">
+                        <label for="">All DataPages</label>
+                      </form>
+                      <a class="bulk-action" href="#">Bulk Actions</a>
+                    </div>
+                    <div class="inside-option">
+                      <form action="">
+                        <input type="checkbox">
+                        <label for=""> <img id="tab-plus" onclick="showminus()" class="plus-img"
+                            src="dist/img/toolbar_add.png" alt="" data-toggle="collapse" href="#collapseExample1"
+                            role="button" aria-expanded="false" aria-controls="collapseExample"> <img
+                            onclick="showplus()" id="tab-minus" src="dist/img/close_props.gif" alt=""
+                            data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
+                            aria-controls="collapseExample"> <img src="dist/img/app.png" alt=""> Academic
+                          Tutoring</label>
+                        <div class="collapse" id="collapseExample1">
+                          <div class="inside-box">
+                            <div>
+                              <input type="checkbox">
+                              <label class="inside-label">Academic Request Form</label>
+                            </div>
+                            <select class="inside-select">
+                              <option value="Structure">DataPage Only</option>
+                              <option value="Data">Data</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="inside-option">
+                      <form action="">
+                        <input type="checkbox">
+                        <label for=""> <img class="plus-img" src="dist/img/toolbar_add.png" alt=""
+                            data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
+                            aria-controls="collapseExample"> <img id="tab-minus" src="dist/img/close_props.gif" alt="">
+                          <img src="dist/img/app.png" alt=""> Class Registration</label>
+                      </form>
+                    </div>
+                    <div class="inside-option">
+                      <form action="">
+                        <input type="checkbox">
+                        <label for=""> <img class="plus-img" src="dist/img/toolbar_add.png" alt=""
+                            data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false"
+                            aria-controls="collapseExample"> <img id="tab-minus" src="dist/img/close_props.gif" alt="">
+                          <img src="dist/img/app.png" alt=""> Meet and Greet</label>
+                      </form>
+                    </div>
+                    <div class="inside-option">
+                      <form action="">
+                        <input type="checkbox">
+                        <label for=""> <img class="plus-img" src="dist/img/toolbar_add.png" alt=""
+                            data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false"
+                            aria-controls="collapseExample"> <img id="tab-minus" src="dist/img/close_props.gif" alt="">
+                          <img src="dist/img/app.png" alt=""> Online Contract</label>
+                      </form>
+                    </div>
+                    <div class="inside-option">
+                      <form action="">
+                        <input type="checkbox">
+                        <label for="">Class Interest</label>
+                      </form>
+                    </div>
+                    <div class="inside-option">
+                      <form action="">
+                        <input type="checkbox">
+                        <label for="">CLB Profile Form</label>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-save" disabled>Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="index3.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+            <i class="fas fa-search"></i>
+          </a>
+          <div class="navbar-search-block">
+            <form class="form-inline">
+              <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-navbar" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-comments"></i>
+            <span class="badge badge-danger navbar-badge">3</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">Call me whenever you can...</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">I got your message bro</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">The subject goes here</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+          </div>
+        </li>
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">15 Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i> 8 friend requests
+              <span class="float-right text-muted text-sm">12 hours</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i> 3 new reports
+              <span class="float-right text-muted text-sm">2 days</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+            <i class="fas fa-th-large"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="index3.html" class="brand-link">
+        <img src="dist/img/header-logo.png" alt="AdminLTE Logo" class="brand-image ">
+        <!-- <span class="brand-text font-weight-light">AdminLTE 3</span> -->
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Alexander Pierce</a>
+                    </div>
+                </div> -->
+
+        <!-- SidebarSearch Form -->
+        <!-- <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item menu-open">
+              <!-- <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a> -->
+              <ul class="nav nav-treeview">
+                <!-- <li class="nav-item">
+                                    <a href="./index.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dashboard v1</p>
+                                    </a>
+                                </li> -->
+                <!-- <li class="nav-item">
+                                    <a href="./index2.html" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dashboard v2</p>
+                                    </a>
+                                </li> -->
+                <!-- <li class="nav-item">
+                                    <a href="./index3.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dashboard v3</p>
+                                    </a>
+                                </li> -->
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="./applications.html" class="nav-link active">
+                <img src="dist/img/applications-blue.svg" alt="" class="clr-img">
+                <p>Applications</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./index2.html" class="nav-link">
+                <img src="dist/img/users-dark.svg" alt="" class="clr-img">
+                <p>Directories <span class="beta">Beta</span></p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./index2.html" class="nav-link">
+                <img src="dist/img/templates-dark.svg" alt="" class="clr-img">
+                <p>Templates</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./index2.html" class="nav-link">
+                <img src="dist/img/logs-dark.svg" alt="" class="clr-img">
+                <p>Logs</p>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+                            <a href="pages/widgets.html" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Widgets
+                                    <span class="right badge badge-danger">New</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Layout Options
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right">6</span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/layout/top-nav.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Top Navigation</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Top Navigation + Sidebar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/layout/boxed.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Boxed</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Fixed Sidebar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/layout/fixed-sidebar-custom.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Fixed Sidebar <small>+ Custom Area</small></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Fixed Navbar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/layout/fixed-footer.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Fixed Footer</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Collapsed Sidebar</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    Charts
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>ChartJS</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/flot.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Flot</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Inline</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/uplot.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>uPlot</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tree"></i>
+                                <p>
+                                    UI Elements
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/UI/general.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>General</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/UI/icons.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Icons</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/UI/buttons.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Buttons</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/UI/sliders.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Sliders</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/UI/modals.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Modals & Alerts</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/UI/navbar.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Navbar & Tabs</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/UI/timeline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Timeline</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/UI/ribbons.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Ribbons</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Forms
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/forms/general.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>General Elements</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/forms/advanced.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Advanced Elements</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/forms/editors.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Editors</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/forms/validation.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Validation</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Tables
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/tables/simple.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Simple Tables</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/tables/data.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>DataTables</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/tables/jsgrid.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>jsGrid</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-header">EXAMPLES</li>
+                        <li class="nav-item">
+                            <a href="pages/calendar.html" class="nav-link">
+                                <i class="nav-icon fas fa-calendar-alt"></i>
+                                <p>
+                                    Calendar
+                                    <span class="badge badge-info right">2</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/gallery.html" class="nav-link">
+                                <i class="nav-icon far fa-image"></i>
+                                <p>
+                                    Gallery
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/kanban.html" class="nav-link">
+                                <i class="nav-icon fas fa-columns"></i>
+                                <p>
+                                    Kanban Board
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-envelope"></i>
+                                <p>
+                                    Mailbox
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Inbox</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/mailbox/compose.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Compose</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/mailbox/read-mail.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Read</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Pages
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/examples/invoice.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Invoice</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/profile.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Profile</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/e-commerce.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>E-commerce</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/projects.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Projects</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/project-add.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Project Add</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/project-edit.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Project Edit</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/project-detail.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Project Detail</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/contacts.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Contacts</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/faq.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>FAQ</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/contact-us.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Contact us</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-plus-square"></i>
+                                <p>
+                                    Extras
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            Login & Register v1
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="pages/examples/login.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Login v1</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="pages/examples/register.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Register v1</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="pages/examples/forgot-password.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Forgot Password v1</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="pages/examples/recover-password.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Recover Password v1</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            Login & Register v2
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="pages/examples/login-v2.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Login v2</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="pages/examples/register-v2.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Register v2</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="pages/examples/forgot-password-v2.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Forgot Password v2</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="pages/examples/recover-password-v2.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Recover Password v2</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/lockscreen.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lockscreen</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/legacy-user-menu.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Legacy User Menu</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/language-menu.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Language Menu</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/404.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Error 404</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/500.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Error 500</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/pace.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pace</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/examples/blank.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Blank Page</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="starter.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Starter Page</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-search"></i>
+                                <p>
+                                    Search
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/search/simple.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Simple Search</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/search/enhanced.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Enhanced</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-header">MISCELLANEOUS</li>
+                        <li class="nav-item">
+                            <a href="iframe.html" class="nav-link">
+                                <i class="nav-icon fas fa-ellipsis-h"></i>
+                                <p>Tabbed IFrame Plugin</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+                                <i class="nav-icon fas fa-file"></i>
+                                <p>Documentation</p>
+                            </a>
+                        </li>
+                        <li class="nav-header">MULTI LEVEL EXAMPLE</li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>Level 1</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-circle"></i>
+                                <p>
+                                    Level 1
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Level 2</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            Level 2
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Level 3</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Level 3</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>Level 3</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Level 2</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>Level 1</p>
+                            </a>
+                        </li>
+                        <li class="nav-header">LABELS</li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-circle text-danger"></i>
+                                <p class="text">Important</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-circle text-warning"></i>
+                                <p>Warning</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p>Informational</p>
+                            </a>
+                        </li> -->
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <h1 class="m-0">Export</h1>
+            </div>
+            <!-- <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard v2</li>
+                            </ol>
+                        </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="section-first">
+                <div class="title">What do you want to export?</div>
+                <div class="section-first-body">
+                  <div>
+                    <input id="ExportData" name="ExportType" type="radio"><label for="ExportData">Export data (records
+                      and files)</label>
+                  </div>
+                  <div>
+                    <input id="ExportApp" name="ExportType" type="radio"><label for="ExportApp">Export an
+                      app</label><select class="SelectApp" style="width: auto; min-width: 204px;">
+                      <option value="">Select app</option>
+                      <option value="Academic Tutoring">Academic Tutoring</option>
+                      <option value="Class Registration">Class Registration</option>
+                      <option value="Meet and Greet">Meet and Greet</option>
+                      <option value="Online Contract">Online Contract</option>
+                    </select>
+                  </div>
+                  <div>
+                    <input id="ExportObj" name="ExportType" type="radio" data-toggle="modal"
+                      data-target="#staticBackdrop"><label for="ExportObj">Custom export (one or more objects)</label>\
+                  </div>
+                </div>
+                <div class="records-files">
+                  <div id="accordion">
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+
+                        <button class="filter-head" data-toggle="collapse" data-target="#collapseOne"
+                          aria-expanded="true" aria-controls="collapseOne">
+                          Tables
+                          <div class="FileTypeCntr">
+                            <label>Export File Format:</label>
+                            <select disabled="">
+                              <option value="XLS">MS Excel</option>
+                              <option value="MDB">MS Access</option>
+                              <option value="CSV">CSV (Comma Delimited)</option>
+                              <option value="XML">Caspio XML</option>
+                            </select>
+                          </div>
+
+                        </button>
+                        <div class="data">
+                          <button disabled="" class="removeall" type="button">Remove
+                            All</button>
+                          <button disabled="" class="add-object" type="button">Add</button>
+                        </div>
+                      </div>
+
+                      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                          <p class="data-txt">
+                            No Tables selected. <a href="javascript:void(0)" data-toggle="modal"
+                              data-target="#exportdatamodal" class="add">Add</a> one now.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingTwo">
+
+                        <button class="collapsed filter-head" data-toggle="collapse" data-target="#collapseTwo"
+                          aria-expanded="false" aria-controls="collapseTwo">
+                          Views
+                          <div class="FileTypeCntr">
+                            <label>Export File Format:</label>
+                            <select disabled="">
+                              <option value="XLS">MS Excel</option>
+                              <option value="MDB">MS Access</option>
+                              <option value="CSV">CSV (Comma Delimited)</option>
+                              <option value="XML">Caspio XML</option>
+                            </select>
+                          </div>
+
+                        </button>
+                        <div class="data">
+                          <button disabled="" class="removeall" type="button">Remove
+                            All</button>
+                          <button disabled="" class="add-object" type="button">Add</button>
+                        </div>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                          <p class="data-txt">
+                            No Tables selected. <a href="javascript:void(0)" data-toggle="modal"
+                              data-target="#exportpackagedatamodal" class="add">Add</a> one now.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingThree">
+
+                        <button class="filter-head collapsed" data-toggle="collapse" data-target="#collapseThree"
+                          aria-expanded="false" aria-controls="collapseThree">
+                          Files
+                          <div class="FileTypeCntr">
+                            <label>Export File Format:</label>
+                            <select disabled="">
+                              <option value="XLS">MS Excel</option>
+                              <option value="MDB">MS Access</option>
+                              <option value="CSV">CSV (Comma Delimited)</option>
+                              <option value="XML">Caspio XML</option>
+                            </select>
+                          </div>
+
+                        </button>
+                        <div class="data">
+                          <button disabled="" class="removeall" type="button">Remove
+                            All</button>
+                          <button disabled="" class="add-object" type="button">Add</button>
+                        </div>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                          <p class="data-txt">
+                            No Tables selected. <a href="javascript:void(0)" data-toggle="modal"
+                              data-target="#exportfiledatamodal" class="add">Add</a> one now.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!--/. container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+      All rights reserved.
+      <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 3.2.0-rc
+      </div>
+    </footer>
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- REQUIRED SCRIPTS -->
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+    integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Bootstrap -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+
+  <!-- PAGE PLUGINS -->
+  <!-- jQuery Mapael -->
+  <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="plugins/raphael/raphael.min.js"></script>
+  <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard2.js"></script>
+
+
+
+  <div id="exportdatamodal" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-body modal-lg">
+      <div class="modal-content">
+        <div class="modal-header page-modal-header">
+          <button type="button" class="close page-modal-close" data-dismiss="modal" aria-hidden="true">
+            <img src="dist/img/closex.png" alt="icon">
+          </button>
+          <h5 class="page-md-header-title">Add Tables to Export Package</h5>
+        </div>
+        <div class="modal-body">
+          <div class="row no-gutters">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <table class="dataexport-table" cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <th>Tables</th>
+                    <th>Data</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>All Tables</span>
+                      </div>
+                    </td>
+                    <td>
+                      <a href="">Bulk Actions</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>Academic_Contacts</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>AcademicComment</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>BlueList </span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>BT_Interest_Table</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>cb_ErrorLog</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>Class_Registration_Students</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>CLB_Profile</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>Comments</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>Common_LU_States</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>Contacts</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>Online_Contract</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer modal-page-footer">
+          <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+          <button id="loadpage" type="button" class="btn btn-save">Delete</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <div id="exportpackagedatamodal" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-body modal-lg">
+      <div class="modal-content">
+        <div class="modal-header page-modal-header">
+          <button type="button" class="close page-modal-close" data-dismiss="modal" aria-hidden="true">
+            <img src="dist/img/closex.png" alt="icon">
+          </button>
+          <h5 class="page-md-header-title">Add Views to Export Package</h5>
+        </div>
+        <div class="modal-body">
+          <div class="row no-gutters">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <table class="dataexport-table" cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <th>View</th>
+                    <th>Data</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>All Views</span>
+                      </div>
+                    </td>
+                    <td>
+                      <a href="">Bulk Actions</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>AdminUser</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>FieldRepUser</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>Students</span>
+                      </div>
+                    </td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer modal-page-footer">
+          <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+          <button id="loadpage" type="button" class="btn btn-save">Delete</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+
+  <div id="exportfiledatamodal" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-body modal-lg">
+      <div class="modal-content">
+        <div class="modal-header page-modal-header">
+          <button type="button" class="close page-modal-close" data-dismiss="modal" aria-hidden="true">
+            <img src="dist/img/closex.png" alt="icon">
+          </button>
+          <h5 class="page-md-header-title">Add Views to Export Package</h5>
+        </div>
+        <div class="modal-body">
+          <div class="row no-gutters">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <table class="dataexport-table dataexport-table2" cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <th>File</th>
+                    <th>Type</th>
+                    <th>Size</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <input type="checkbox">
+                        <span>All Files</span>
+                      </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="file-list">Comman</td>
+                    <td>JPEG Image</td>
+                    <td>
+                      <select style="width: 120px;">
+                        <option value="Structure">Without data</option>
+                        <option value="Data">With data</option>
+                        <option value="Files">Data &amp; files</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr class="answer">
+                    <td>asdasd</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer modal-page-footer">
+          <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+          <button id="loadpage" type="button" class="btn btn-save">Delete</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+
+  <!-- /.modal -->
+
+  <script>
+    $("#myModal").draggable({
+      handle: ".modal-header"
+    });
+    $("#deleteModal").draggable({
+      handle: ".modal-header"
+    });
+    $("#duplicateModal").draggable({
+      handle: ".modal-header"
+    });
+    $(document).ready(function () {
+      $('#rename-input').click(function () {
+        $(".edit").css('display', 'flex');
+        $(".page-name-link").css('display', 'none');
+      });
+      $('.BtnLink').click(function () {
+
+        $(".edit").css('display', 'none');
+        $(".page-name-link").css('display', 'block');
+      });
+    });
+
+  </script>
+  <script>
+
+
+    $(document).ready(function () {
+      $('.file-list .answer').hide();
+
+      $('.file-list > li').click(function () {
+        if ($(this).hasClass("active")) {
+          $(this).removeClass("active").find(".answer").slideUp();
+        } else {
+          $(".file-list .answer").slideUp();
+          $(".file-list").removeClass("active");
+          $(this).addClass("active").find(".answer").slideDown();
+        }
+        return false;
+      });
+
+    });
+
+    function showminus() {
+      document.getElementById('tab-plus').style.display = 'none';
+      document.getElementById('tab-minus').style.display = 'inline-block';
+    }
+
+    function showplus() {
+      document.getElementById('tab-minus').style.display = 'none';
+      document.getElementById('tab-plus').style.display = 'inline-block';
+    }
+  </script>
+
+
+</body>
+
+</html>
